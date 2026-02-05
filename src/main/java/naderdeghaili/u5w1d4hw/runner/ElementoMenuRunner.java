@@ -77,5 +77,8 @@ public class ElementoMenuRunner implements CommandLineRunner {
         pProsciutto.forEach(p -> log.info("Pizza con prosciutto cotto: " + p.getNome()));
 
 
+        Pizza marghe = ps.findByNome("Margherita");
+        log.info(String.valueOf(marghe));
+
     }
 }

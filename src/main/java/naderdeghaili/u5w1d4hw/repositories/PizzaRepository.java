@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface PizzaRepository extends JpaRepository<Pizza, Long> {
 
-    List<Pizza> findByNome(String nome);
+    Pizza findByNome(String nome);
 
     boolean existsByNome(String nome);
 

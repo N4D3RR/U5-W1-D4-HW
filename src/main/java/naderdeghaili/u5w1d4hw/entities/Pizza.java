@@ -10,7 +10,7 @@ import java.util.List;
 @DiscriminatorValue("PIZZA")
 public class Pizza extends ElementoMenu {
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "pizza_toppings",
             joinColumns = @JoinColumn(name = "pizza_id"),

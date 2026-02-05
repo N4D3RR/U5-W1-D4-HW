@@ -31,4 +31,8 @@ public class PizzaService {
     public List<Pizza> getPizzaByTopping(String nomeTopping) {
         return pr.findByToppingsNome(nomeTopping);
     }
+
+    public Pizza findByNome(String nome) {
+        return pr.findByNome(nome);
+    }
 }
