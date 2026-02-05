@@ -12,4 +12,7 @@ public interface PizzaRepository extends JpaRepository<Pizza, Long> {
     List<Pizza> findByNome(String nome);
 
     boolean existsByNome(String nome);
+
+    List<Pizza> findByToppingsNome(String nome);
+
 }

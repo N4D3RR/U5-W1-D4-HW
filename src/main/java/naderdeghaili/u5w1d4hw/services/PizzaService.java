@@ -6,6 +6,8 @@ import naderdeghaili.u5w1d4hw.exceptions.ValidationException;
 import naderdeghaili.u5w1d4hw.repositories.PizzaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Slf4j
 public class PizzaService {
@@ -24,5 +26,9 @@ public class PizzaService {
         this.pr.save(newPizza);
 
         log.info("La pizza " + newPizza.getNome() + " è stata aggiunta");
+    }
+
+    public List<Pizza> getPizzaByTopping(String nomeTopping) {
+        return pr.findByToppingsNome(nomeTopping);
     }
 }

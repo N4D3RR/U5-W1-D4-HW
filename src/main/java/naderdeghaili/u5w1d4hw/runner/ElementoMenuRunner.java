@@ -11,6 +11,8 @@ import naderdeghaili.u5w1d4hw.services.ToppingService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Slf4j
 public class ElementoMenuRunner implements CommandLineRunner {
@@ -64,6 +66,15 @@ public class ElementoMenuRunner implements CommandLineRunner {
 //        bs.saveBevanda(acqua);
 //        bs.saveBevanda(cocaCola);
 //        bs.saveBevanda(fanta);
+
+        List<Pizza> pMozza = ps.getPizzaByTopping("Mozzarella");
+        log.info("--- Pizze con mozzarella --- ");
+        pMozza.forEach(p -> log.info(p.getNome()));
+
+
+        List<Pizza> pProsciutto = ps.getPizzaByTopping("Prosciutto cotto");
+        log.info("--- Pizze con prosciutto --- ");
+        pProsciutto.forEach(p -> log.info("Pizza con prosciutto cotto: " + p.getNome()));
 
 
     }
